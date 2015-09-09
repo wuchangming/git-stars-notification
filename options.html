@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Mail Checker - Options</title>
+<link href="options.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="src/options.js" ></script>
+
+<div id="header"><h1 id='header1'>Mail Checker Options</h1></div>
+
+<div class="section-header first" id="setting">Setting</div>
+<table width="auto" border="0" cellpadding="1" cellspacing="1">
+  <tbody>
+    <tr>
+      <td style="text-align: right;" id="email">Email:</td>
+      <td style="text-align: left; "><input type="text" id="custom-email">@
+<select id="custom-mailserver">
+    <option value="126.com">126.com</option>
+    <option value="163.com">163.com</option>
+    <option value="qq.com">qq.com</option>
+    <option value="yeah.net">yeah.net</option>
+</select> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right;" id="password">Password:</td>
+      <td style="text-align: left; "><input type="password" id="custom-password"></td>
+    </tr>
+    <tr>
+      <td style="text-align: right;" id="checkcycle">Check Cycle</td>
+      <td style="text-align: left;"><input type="text" id="custom-checkcycle" maxlength="3" size="1"><label for="custom-checkcycle" id="minute">Minutes</label></td>
+    </tr>
+    <tr>
+      <td style="text-align: right;"><input type=checkbox id="custom-displayall"></td>
+      <td style="text-align: left;" id="displayall">Display the number of all unread mails</td>
+    </tr>
+    <tr>
+      <td style="text-align: right;"><input type=checkbox id="custom-notify"></td>
+      <td style="text-align: left;" id="notification">Display notifications</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<div id="warn">
+    <p id="warn_msg"> REMINDER: Save password, use with caution on public machines!</p>
+</div>
+
+<div id="footer">
+  <button id="save-button" style="font-weight:bold">Save</button>
+  <button id="cancel-button">Cancel</button>
+</div>
+
+</body>
+</html>

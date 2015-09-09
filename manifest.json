@@ -1,0 +1,25 @@
+{
+  "name": "github_star_notification",
+  "description": "github_star_notification",
+  "version": "2.4",
+  "homepage_url": "https://chrome.google.com/webstore/detail/kaklalnjjcbnacalpghdfokeohelpbnf?hl=zh-CN",
+  "background_page": "background.html",
+  "background": {"page": "background.html"},
+  "options_page": "options.html",
+  "permissions": [
+    "notifications",
+    "tabs",
+    "cookies",
+    "http://*.github.com/*",
+    "https://*.github.com/*"
+   ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval';",
+  "browser_action": {
+      "default_title": "github_star_notification"
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "default_locale" : "zh_CN",
+  "manifest_version" : 2
+}
