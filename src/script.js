@@ -3,7 +3,6 @@ var canvas;
 var canvasContext;
 var loggedInImage;
 var requestFailureCount = 0;  // used for exponential backoff
-var requestTimeout = 1000 * 2;  // 5 seconds
 
 var unreadCount = "";
 var loadingAnimation = new LoadingAnimation();
@@ -14,16 +13,6 @@ var icon_url = '';
 // Gmail. This animates the badge text with a dot that cycles from left to
 // right.
 
-
-function isInit() {
-	if(typeof(localStorage.email)=="undefined" || localStorage.email.length<6)
-	return false;
-
-	if(typeof(localStorage.password)=="undefined" || localStorage.password.length<6)
-	return false;
-
-	return true;
-}
 
 function init() {
 	canvas = document.getElementById('canvas');
@@ -37,7 +26,7 @@ function init() {
 }
 
 function scheduleRequest() {
-	window.setTimeout(startRequest, 1000 * 60);
+	window.setInterval(startRequest, 1000 * 60);
 }
 
 function startRequest() {
@@ -55,6 +44,11 @@ function updateUnreadCount(count) {
 		animateFlip();
 	}
 }
+
+// Called when the user clicks on the browser action.
+chrome.browserAction.onClicked.addListener(function(tab) {
+	startRequest();
+});
 
 document.addEventListener('DOMContentLoaded', function() {
 	init();
